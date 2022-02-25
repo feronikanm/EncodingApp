@@ -30,28 +30,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+        binding.btnTransform.setOnClickListener {
 
+            val message = binding.edtText.text.toString().trim()
 
-
-        val message = binding.edtText.text.toString().trim()
-
-        binding.btnSendActivity.setOnClickListener {
-
-            if (message != null){
-                binding.tvResult.text = message
-            }else{
-                binding.tvResult.text = "-"
-            }
+            binding.tvResult.text = flipHorizontal(message.toCharArray())
         }
 
     }
 
-
-
-//    fun flipHorizontal(): String {
-//        var output = arrayListOf<String>()
-//
-//        return output
-//    }
+    private fun flipHorizontal(inputText: CharArray): String {
+        var output = ""
+        for (i in inputText.lastIndex downTo 0 step 1) {
+            output += inputText[i]
+        }
+        return output
+    }
 }
