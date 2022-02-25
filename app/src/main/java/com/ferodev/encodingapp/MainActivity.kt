@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnTransform.setOnClickListener {
 
-            val message = binding.edtText.text.toString().trim()
+            val message = binding.etText.text.toString().trim()
 
             binding.tvResult.text = flipHorizontal(message.toCharArray())
         }

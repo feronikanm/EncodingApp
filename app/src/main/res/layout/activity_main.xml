@@ -35,7 +35,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/edt_text"
+            android:id="@+id/et_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
